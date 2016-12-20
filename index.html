@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans">
-
 <head>
     <meta charset="UTF-8">
     <title>辛向阳的简历</title>
     <meta name="description" content="辛向阳 web前端工程师 简历">
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta content="width=device-width,user-scalable=0,initial-scale=1,maximum-scale=1" name="viewport">
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/just.css" id="theme">
     <link rel="stylesheet" href="css/index.css">
@@ -17,37 +14,20 @@
 </head>
 
 <body>
-    <div class="reveal">
+    <div class="reveal" id="content">
         <div class="slides">
             <section>
-                <img id="avatar" src="img/avatar.jpg" alt="avatar">
-                <h2 id="name">辛向阳</h2>
-                <h4>一只怀揣北漂梦的web前端攻城狮</h4>
-                <small>热爱互联网，热爱前端，致力于写代码~</small>
-                <p><a href="mailto:xinlove100@hotmail.com">xinlove100@hotmail.com</a></p>
-                <p><a href="tel:15022673432">15022673432</a></p>
+                <img id="avatar" v-bind:src="user.img" alt="avatar">
+                <h2 id="name">{{user.username}}</h2>
+                <h4>{{user.job}}</h4>
+                <small>{{user.desc}}</small>
+                <p><a v-bind:href="'mailto:'+user.email">{{user.email}}</a></p>
+                <p><a v-bind:href="'tel:'+user.tel">{{user.tel}}</a></p>
             </section>
             <section>
                 <h3 class="title">专业技能</h3>
-                <p>
-                    <span class="l2"> JavaScript </span>
-                    <span class="l2"> jQuery </span>
-                    <span class="l3"> Git </span>
-                    <span class="l3"> Svn </span>
-                </p>
-                <p>
-                    <span class="l1"> Html </span>
-                    <span class="l1"> Css </span>
-                    <span class="l2"> Scss </span>
-                    <span class="l3"> BootStrap </span>
-                    <span class="l2"> Ps </span>
-                </p>
-                <p>
-                    <span class="l4"> Ruby </span>
-                    <span class="l4"> angular </span>
-                    <span class="l3"> Sails </span>
-                    <span class="l3"> RequireJs </span>
-                    <span class="l4"> Backbone.Marionette </span>
+                <p v-for="skill in skills">
+                    <span v-for="ski in skill" v-bind:class="'l' + ski.level" > {{ski.name}} </span>
                 </p>
             </section>
             <section>
@@ -55,117 +35,67 @@
                     <h3 class="title">项目经验</h3>
                     <p>↓</p>
                 </section>
-                <section>
-                    <h4>优众网移动端</h4>
-                    <small>2014/03--至今</small>
-                    <p class="left">优众网是一家定位于高端人群社交的电子商务公司，致力于打造全球顶级时尚奢侈品在线零售商。</p>
+                <section v-for="exprience in expriences">
+                    <h4>{{exprience.name}}</h4>
+                    <small>{{exprience.time}}</small>
+                    <p v-bind:class="exprience.img ? 'left' : ''">{{exprience.desc}}</p>
                     <div class="clearfix">
-                      <a target="_blank" href="http://touch.ihaveu.com"><img class="imgleft" src="img/touch.jpg" alt="优众网移动端"></a>
-                      <div class="left pfloat">
-                          <p>负责项目的页面制作，交互效果，数据渲染。</p>
-                          <p>包括：宣传页面<a target="_blank" href="http://touch.ihaveu.com/invitation/index.html">touch.ihaveu.com/invitation/index.html</a></p>
-                          <p>项目基于rails+jquery。 svn版本控制。</p>
-                      </div>
+                        <a target="_blank" v-bind:href="exprience.url" v-if="exprience.img"><img class="imgleft" v-bind:src="exprience.img" :alt="exprience.name"></a>
+                        <div v-bind:class="exprience.img ? 'left pfloat' : ''">
+                            <p v-for="edesc in exprience.workdesc">{{edesc}}</p>
+                        </div>
                     </div>
-                    <h4>网站地址<a target="_blank" href="http://touch.ihaveu.com">touch.ihaveu.com</a><small>（Ps:仅在移动端访问，PC端会自动转至PC端网站）</small></h4>
-                </section>
-                <section>
-                    <h4>全球U选触屏版</h4>
-                    <small>2015/10--至今</small>
-                    <p class="left">全球U选是优众网旗下跨境电子商务。</p>
-                    <div class="clearfix">
-                      <a target="_blank" href="http://tuxuan.ihaveu.com"><img class="imgleft" src="img/tuxuan.jpg" alt="全球U选触屏版"></a>
-                      <div class="left pfloat">
-                          <p>负责项目的页面制作，交互效果，数据渲染。</p>
-                          <p>项目基于rails+jquery。 git版本控制。</p>
-                      </div>
-                    </div>
-                    <h4>网站地址<a target="_blank" href="http://tuxuan.ihaveu.com">tuxuan.ihaveu.com/</a><small>（Ps:仅在移动端访问，PC端会自动转至PC端网站）</small></h4>
-                </section>
-                <section>
-                    <h4>全球U选pc版</h4>
-                    <small>2015/10--至今</small>
-                    <p class="left">全球U选是优众网旗下跨境电子商务。</p>
-                    <div class="clearfix">
-                      <a target="_blank" href="http://uxuan.ihaveu.com"><img class="imgleft" src="img/uxuan.jpg" alt="全球U选触屏版"></a>
-                      <div class="left pfloat">
-                          <p>负责项目部分页面制作，交互效果，数据渲染。</p>
-                          <p>项目基于sails+jquery。 git版本控制。</p>
-                      </div>
-                    </div>
-                    <h4>网站地址<a target="_blank" href="http://uxuan.ihaveu.com">uxuan.ihaveu.com/</a><small>（Ps:仅在PC端访问，移动端会自动转至触屏版）</small></h4>
-                </section>
-                <section>
-                    <h4>海外购app用户版(已下线)</h4>
-                    <small>2015/07--2015/09</small>
-                    <p>项目为用户海外购WebAPP(H5)。</p>
-                    <p>项目基于angular+scss+phonegap。git版本控制。</p>
-                    <h4>微商城项目(已下线)</h4>
-                    <small>2015/03--2015/07</small>
-                    <p>帮助用户在微信上搭建微信商城的平台,提供店铺、商品、订单、物流、消息和客户的管理模块。</p>
-                    <p>项目基于requirejs+backbone.marionette。git版本控制。</p>
+                    <h4 v-if="exprience.url">网站地址<a target="_blank" v-bind:href="exprience.url">{{exprience.url}}</a>
+                    <small v-if="exprience.tip">{{exprience.tip}}</small></h4>
                 </section>
             </section>
             <section>
                 <h3 class="title">教育背景</h3>
-                <p>陕西科技大学 计算机科学与技术 本科</p>
-                <p class="date">2009/09--2013/06</p>
+                <p v-text="user.school"></p>
+                <p class="date" v-text="user.studytime"></p>
             </section>
             <section>
                 <h3 class="title">工作经历</h3>
-                <h4>天津网聚优众科技有限公司 <small>web前端工程师</small></h4>
-                <p class="date">2014/03--至今</p>
-                <ul>
-                    <li>负责公司项目的切图，css3动画效果，js逻辑，以及数据渲染</li>
-                    <li>项目有：优众网移动端、全球U选触屏版、全球U选pc版、海外购app用户版(已下线)、微店项目(已下线)</li>
-                </ul>
-                <h4>天津亦冠科技有限公司 <small>web前端工程师</small></h4>
-                <p class="date">2013/09--2014/01</p>
-                <ul>
-                    <li>负责公司日常业务页面的切图和JS效果</li>
-                </ul>
+                <my-company v-for="company in companys" :company="company"></my-company>
             </section>
             <section>
                 <h3 class="title">More</h3>
-                <p>从无到有的造轮子或许很难，那么学着理解现有的轮子并去使用它，在使用的过程中结合实际问题去改善它，想来也是不错的！</p>
-                <p>主要兴趣集中在前端开发，用代码将一个个构思实现并展示出来，这是多么让人愉悦的一件事^_^！</p>
-                <p>喜欢玩游戏、旅游、唱歌，更喜欢可口的食物。</p>
-                <!-- <h4><a href="javascript:;" target="_self">下载简历</a></h4> -->
+                <p v-for="more in user.mores" v-text="more"></p>
             </section>
         </div>
     </div>
+    <template id="tmpl">
+        <div><h4>{{company.name}}<small>{{company.job}}</small></h4>
+        <p class="date">{{company.date}}</p>
+        <ul>
+            <li v-for="cdesc in company.desc" v-text="cdesc"></li>
+        </ul></div>
+    </template>
+    <script src="js/info.js"></script>
+    <script src="js/vue.min.js"></script>
+    <script type="text/javascript">
+        Vue.component('my-company', {
+            props:['company'],
+            template:  '#tmpl'
+        });
+        var vue = new Vue({
+            el:'#content',
+            data:info
+        });
+    </script>
     <script src="js/head.min.js"></script>
     <script src="js/reveal.min.js"></script>
     <script>
-    // Full list of configuration options available here:
-    // https://github.com/hakimel/reveal.js#configuration
     Reveal.initialize({
         controls: true,
         progress: true,
         history: true,
         center: true,
-
-        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-        // transition: Reveal.getQueryHash().transition || "linear", // default/cube/page/concave/zoom/linear/fade/none
-
-        // Transition style
-        transition: 'convex', // none/fade/slide/convex/concave/zoom
-
-        // Enable slide navigation via mouse wheel
+        theme: Reveal.getQueryHash().theme,
+        transition: 'convex', 
         mouseWheel: true,
-
         slideNumber: true,
-
         loop: true,
-
-        // Transition style for full page slide backgrounds
-        // backgroundTransition: 'convex', // none/fade/slide/convex/concave/zoom
-
-        // Parallax scrolling
-        // parallaxBackgroundImage: "https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg",
-        // parallaxBackgroundSize: "2100px 900px",
-
-        // Optional libraries used to extend on reveal.js
         dependencies: []
     });
     </script>
