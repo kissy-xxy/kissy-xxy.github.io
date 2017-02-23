@@ -1,3 +1,15 @@
+#download{
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  z-index: 100;
+  font-size: .8em;
+  padding: .6em;
+  font-family: "STHeitiSC-Light", "STHeiti","Helvetica Neue", "Segoe UI", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  -webkit-transform: translate3d(-50%,0,0);
+  -moz-transform: translate3d(-50%,0,0);
+  transform: translate3d(-50%,0,0);
+}
 #avatar {
   width: 256px;
   height: 256px;
