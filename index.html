@@ -74,99 +74,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/02/05/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2021-02-05T05:51:15.272Z" itemprop="datePublished">2021-02-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/02/05/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        hexo init
-        
-          <p class="article-more-link">
-            <a href="/2021/02/05/hello-world/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://kissy-xxy.github.io/2021/02/05/hello-world/" data-id="ckkrvf6il0003xxp09a439w3i" data-title="Hello World" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-basic" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/02/04/basic/" class="article-date">
-  <time class="dt-published" datetime="2021-02-04T22:29:37.000Z" itemprop="datePublished">2021-02-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/02/04/basic/">浅谈现实世界信息数字化</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>&emsp;&emsp;在我们的计算机中，一切信息（文字、音视频、图片等）都是通过相关的规则转换成0和1的字符串表示，反过来，也能通过对应规则将计算机中这些0和1的编码解析出其代表的真实世界的信息。<strong>计算的本质也是将一种字符串通过规则转换成另一种字符串。</strong><br>&emsp;&emsp;先说说进制，逢n进1，是n进制，像手表时针12进制，秒针60进制。计算机采用的是二进制，在人们日常生活习惯中使用的是十进制，**<em>那为什么计算机里却没有采用十进制呢？**</em></p>
-<ol>
-<li>最主要是二进制状态简单稳定，容易被表示，如灯的开关、电压高低等。如果用十种不同电压值表示十进制，就远没有高低电压的二进制稳定。</li>
-<li>完全能处理逻辑，1表示‘是’0表示‘否’，也没浪费状态，十进制就不一样了，浪费了剩余的8个。</li>
-<li>二进制的运算规则比十进制少，如十进制乘法要9*9=81种规则，二进制只有0*0、0*1、1*0、1*1，简化了计算机运算器的内部结构。</li>
-</ol>
-<p><strong><em>各种信息又是怎样用二进制表示的呢？</em></strong><br><strong>数字</strong><br>&emsp;&emsp;数字分为整数、小数、正数、负数。正负数通过最高位0正1负表示，其余为数值位，计算机中的数字用补码表示，这样解决了+0和-0的问题，正数补码为原码本身，负数取反加1，补码的补码是其原码。<br>&emsp;&emsp;十进制转二进制规则：整数部分，是除2取余法直至0，小数部分是乘2取整直至1。表示方法也分为定点数表示法（整数和纯小数）和浮点数表示法，其中浮点数由尾数和阶码拼接组成。任意一个数 n=m*2^e，m为尾数（纯小数），e为阶码（整数），浮点数 = [有符阶码二进制数][有符尾数二进制数]。小数位可能一直无法乘到1而无限循环，但二进制位有限，就会造成精度丢失，也就产生了0.1+0.2！=0.3的问题。</p>
-<p><strong>文字符号</strong><br>&emsp;&emsp;计算机字符的转换规则统一遵循ascii码（美国信息交换标准码），128个字符分别表示键盘上的符号，包括数字、英文、运算符、删除回车等。ascii码只占一个字节，128个数只需要7个字节，还剩余一位，则默认首位为0，其他一些国家会使用首位，这样在他们自己的编码集里128～255分别表示他们自己定义等符号。<br>&emsp;&emsp;中文个数比较多，一个字节完全不能表示尽，所以中文使用两个字节来表示。这样又会有个问题，两个字节中的一个可能和ascii码一样，防止冲突，在机内码中将汉字国标码每个字节最高位都改为1，即机内码=国标码+8080H。<br>&emsp;&emsp;Unicode(utf-8)是全球通用字符集，也叫万国码、统一码，存的字符集数量更多，所以，每个字符分配4个字节。<br>&emsp;&emsp;平常遇到乱码的情况，就是你当前的字符集不兼容了。</p>
-<p><strong>音频</strong><br>&emsp;&emsp;声音是物体震动产生的声波，再通过介质传播并能被听到的波动现象（百度百科一下）。计算机怎么存储的声音呢？是将声音震动波采样离散、量化离散后生成单个声波点，再将声波点编码成0、1字符串。<br>采样频率：单位时间内采样次数，单位hz，一般电话是8khz，音乐是44khz。<br>量化位数：即采样精度，每个采样点需要的字节数，单位：位/字节。<br>声道：一个音频可有单到多个声道，每个声道能存储不同声音信息，电话一般是单声道，音乐是左右双声道，多声道立体音更环绕。<br>比特率：每秒音频包含的数据位数，单位bps。等于<em>采样频率x量化位数x声道数</em><br>数据量大小： <em>比特率x时间（单位s）</em></p>
-<p><strong>图片</strong><br>&emsp;&emsp;</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://kissy-xxy.github.io/2021/02/04/basic/" data-id="ckkrvf6ib0000xxp06noygc86" data-title="浅谈现实世界信息数字化" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" rel="tag">计算机基础</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
     <article id="post-first" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/02/03/first/" class="article-date">
@@ -198,12 +105,55 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://kissy-xxy.github.io/2021/02/03/first/" data-id="ckkrvf6ih0001xxp06yb07fek" data-title="回顾过去，展望未来" class="article-share-link">Share</a>
+      <a data-url="http://kissy-xxy.github.io/2021/02/03/first/" data-id="ckkrvttlg000066kfd6qz5iwv" data-title="回顾过去，展望未来" class="article-share-link">Share</a>
       
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%90%90%E4%BA%8B/" rel="tag">生活琐事</a></li></ul>
 
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/01/31/hello-world/" class="article-date">
+  <time class="dt-published" datetime="2021-01-31T22:29:37.000Z" itemprop="datePublished">2021-01-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/01/31/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        hexo init
+        
+          <p class="article-more-link">
+            <a href="/2021/01/31/hello-world/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://kissy-xxy.github.io/2021/01/31/hello-world/" data-id="ckkrvttlm000166kf1lmicxy2" data-title="Hello World" class="article-share-link">Share</a>
+      
+      
+      
     </footer>
   </div>
   
@@ -225,7 +175,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%90%90%E4%BA%8B/" rel="tag">生活琐事</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" rel="tag">计算机基础</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB%E7%90%90%E4%BA%8B/" rel="tag">生活琐事</a></li></ul>
     </div>
   </div>
 
@@ -235,7 +185,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/%E7%94%9F%E6%B4%BB%E7%90%90%E4%BA%8B/" style="font-size: 10px;">生活琐事</a> <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">计算机基础</a>
+      <a href="/tags/%E7%94%9F%E6%B4%BB%E7%90%90%E4%BA%8B/" style="font-size: 10px;">生活琐事</a>
     </div>
   </div>
 
@@ -244,7 +194,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li></ul>
     </div>
   </div>
 
@@ -257,15 +207,11 @@
       <ul>
         
           <li>
-            <a href="/2021/02/05/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2021/02/04/basic/">浅谈现实世界信息数字化</a>
-          </li>
-        
-          <li>
             <a href="/2021/02/03/first/">回顾过去，展望未来</a>
+          </li>
+        
+          <li>
+            <a href="/2021/01/31/hello-world/">Hello World</a>
           </li>
         
       </ul>
