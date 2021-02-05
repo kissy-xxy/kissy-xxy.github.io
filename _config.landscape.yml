@@ -1,0 +1,23 @@
+menu:
+  Home: /
+  Archives: /archives
+# rss: /atom.xml
+banner: images/banner.jpg
+
+# Content
+excerpt_link: Read More
+fancybox: false
+recent_posts_limits: 5
+
+# Sidebar
+sidebar: right
+widgets:
+- category
+- archive
+- recent_posts
+- tagcloud
+
+# Miscellaneous
+google_analytics:
+favicon: /favicon.png
+twitter:
