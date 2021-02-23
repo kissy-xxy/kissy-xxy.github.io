@@ -4,17 +4,19 @@
   <meta charset="utf-8">
   
   
-  <title>向阳的葵</title>
+  <title>计算与计算机 | 向阳的葵</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="technology blog &amp; life zone">
-<meta property="og:type" content="website">
-<meta property="og:title" content="向阳的葵">
-<meta property="og:url" content="http://kissy-xxy.github.io/index.html">
+  <meta name="description" content="&amp;emsp;&amp;emsp;从千年前的石器时代、青铜器时代、铁器时代到近现代的蒸汽时代、电气时代、原子时代再到如今的信息时代，人类工具经过了一代又一代的发展，使得社会资源也得到了大大提升（感谢先人们的智慧）。信息时代当然离不开计算机。 可计算性&amp;emsp;&amp;emsp;在数学中，可计算性是函数的一个特性；在计算机中，可计算性是指一个实际问题能否用计算机来解决。在计算机还没发明出以前，也是有计算装置的，比">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算与计算机">
+<meta property="og:url" content="http://kissy-xxy.github.io/2021/02/06/basicComouter/index.html">
 <meta property="og:site_name" content="向阳的葵">
-<meta property="og:description" content="technology blog &amp; life zone">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;从千年前的石器时代、青铜器时代、铁器时代到近现代的蒸汽时代、电气时代、原子时代再到如今的信息时代，人类工具经过了一代又一代的发展，使得社会资源也得到了大大提升（感谢先人们的智慧）。信息时代当然离不开计算机。 可计算性&amp;emsp;&amp;emsp;在数学中，可计算性是函数的一个特性；在计算机中，可计算性是指一个实际问题能否用计算机来解决。在计算机还没发明出以前，也是有计算装置的，比">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-02-06T18:02:21.000Z">
+<meta property="article:modified_time" content="2021-02-23T05:40:41.952Z">
 <meta property="article:author" content="xxy">
-<meta property="article:tag" content="js node computer ">
+<meta property="article:tag" content="计算机基础">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="向阳的葵" type="application/atom+xml">
@@ -72,9 +74,7 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-basicComouter" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-basicComouter" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/02/06/basicComouter/" class="article-date">
   <time class="dt-published" datetime="2021-02-06T18:02:21.000Z" itemprop="datePublished">2021-02-06</time>
@@ -87,8 +87,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/02/06/basicComouter/">计算与计算机</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      计算与计算机
     </h1>
   
 
@@ -118,106 +118,19 @@
     </footer>
   </div>
   
-</article>
-
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-basicInfo" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/02/04/basicInfo/" class="article-date">
-  <time class="dt-published" datetime="2021-02-04T22:29:37.000Z" itemprop="datePublished">2021-02-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/02/04/basicInfo/">浅谈现实世界信息数字化</a>
-    </h1>
+    <a href="/2021/02/04/basicInfo/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">浅谈现实世界信息数字化</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>&emsp;&emsp;在我们的计算机中，一切信息（文字、音视频、图片等）都是通过相关的规则转换成0和1的字符串表示，反过来，也能通过对应规则将计算机中这些0和1的编码解析出其代表的真实世界的信息。<strong>计算的本质也是将一种字符串通过规则转换成另一种字符串。</strong><br>&emsp;&emsp;先说说进制，逢n进1，是n进制，像手表时针12进制，秒针60进制。计算机采用的是二进制，在人们日常生活习惯中使用的是十进制，<strong>那为什么计算机里却没有采用十进制呢？</strong></p>
-<ol>
-<li>最主要是二进制状态简单稳定，容易被表示，如灯的开关、电压高低等。如果用十种不同电压值表示十进制，就远没有高低电压的二进制稳定。</li>
-<li>完全能处理逻辑，1表示‘是’0表示‘否’，也没浪费状态，十进制就不一样了，浪费了剩余的8个。最完美的公式拥有最简单的符号，而通过任意组合这些简单的符号，能实现所有的逻辑，有点道家<code>大道至简</code>的味道。</li>
-<li>二进制的运算规则比十进制少，如十进制乘法要<code>9*9=81</code>种规则，二进制只有<code>0*0</code>、<code>0*1</code>、<code>1*0</code>、<code>1*1</code>，简化了计算机运算器的内部结构。</li>
-</ol>
-<p><strong><em>各种信息又是怎样用二进制表示的呢？</em></strong><br><strong>数字</strong><br>&emsp;&emsp;数字分为整数、小数、正数、负数。正负数通过最高位0正1负表示，其余为数值位，计算机中的数字用补码表示，这样解决了+0和-0的问题，正数补码为原码本身，负数取反加1，补码的补码是其原码。<br>&emsp;&emsp;十进制转二进制规则：整数部分，是除2取余法直至0，小数部分是乘2取整直至1。表示方法也分为定点数表示法（整数和纯小数）和浮点数表示法，其中浮点数由尾数和阶码拼接组成。任意一个数 <code>n=m*2^e</code>，m为尾数（纯小数），e为阶码（整数），浮点数 = <code>[有符阶码二进制数\][有符尾数二进制数]</code>。小数位可能一直无法乘到1而无限循环，但二进制位有限，就会造成精度丢失，也就产生了0.1+0.2！=0.3的问题。<br>&emsp;&emsp;两个正数相加结果超出最高存储范围就会正溢出，负溢出是两负数相加过长。溢出后的值是理论结果mod2^n（n为位数），依据的是同余理论。<br>一些常见位运算 <strong><em><code>~~n n向下取整</code></em></strong> <strong><em><code>n&gt;&gt;1 n/2 向下取整</code></em></strong> <strong><em><code>n&lt;&lt;1 n*2 忽略小数位</code></em></strong></p>
-<p><strong>文字符号</strong><br>&emsp;&emsp;计算机字符的转换规则统一遵循ascii码（美国信息交换标准码），128个字符分别表示键盘上的符号，包括数字、英文、运算符、删除回车等。ascii码占一个字节，128个数只需要7位，还剩余一位，则默认首位为0。其他一些国家会使用首位，这样在他们自己的编码集里128～255分别表示他们自己定义的符号。<br>&emsp;&emsp;中文个数比较多，一个字节完全不能表示尽，所以中文使用两个字节来表示。这样又会有个问题，两个字节中的一个可能和ascii码一样，防止冲突，在机内码中将汉字国标码每个字节最高位都改为1，即机内码=国标码+8080H。<br>&emsp;&emsp;Unicode(utf-8)是全球通用字符集，也叫万国码、统一码、唯一码，存的字符集数量更多，所以，每个字符分配4个字节。<br>&emsp;&emsp;平常遇到乱码的情况，就是你当前的字符集不兼容了。</p>
-<p><strong>音频</strong><br>&emsp;&emsp;声音是物体震动产生的声波，再通过介质传播并能被听到的波动现象（百度百科解释）。计算机怎么存储的声音呢？是将声音震动波采样离散、量化离散后生成单个声波点，再将声波点编码成0、1字符串。<br>采样频率：单位时间内采样次数，单位hz，一般电话是8khz，音乐是44khz，采样频率越高，数据量越大。<br>量化位数：即采样精度，记录每个采样点需要的二进制位数，单位：位/字节。<br>声道：一个音频可有单到多个声道，每个声道能存储不同声音信息，电话一般是单声道，音乐是左右双声道，多声道声音更立体更环绕。<br>比特率：每秒音频包含的数据位数，单位bps。等于<code>采样频率x量化位数x声道数</code><br>音频数据量： <code>比特率x时间</code></p>
-<p><strong>图片</strong><br>&emsp;&emsp;一张图片是由无数个像素点组成，常说的分辨率axb就是有axb个像素点，也叫位图，栅格图片最小单位，每个像素点存储了一些信息，如位置、颜色、透明度等。其中颜色是如何编码化的呢？现实中任何一种颜色都可以通过三原色（红绿蓝）改变亮度组合而成。亮度是个无限量的概念，怎样通过有限的数据表示它呢？可以将亮度量化成有限的值。比如白天和黑夜是0、1两个，白灰黑是<code>00</code>、<code>01</code>or<code>10</code>、<code>11</code>三个，依此类推，计算机将三原色中每种颜色的亮度都量化成256个数值（0～255），然后将这些量化后的数值组合起来，就可以表示某个颜色都信息值，这就是常见的rgb颜色模型，如rgb（0，0，0）。<br>&emsp;&emsp;<code>单色图像</code>每个像素点只有1个bit，计算机用1表示黑色，0表示白色<br>&emsp;&emsp;<code>灰度图像</code>每个像素点4个bit，可以表示0000～1111 16种颜色<br>&emsp;&emsp;<code>真彩色图像</code>基于rgb模型图像，每个像素点占<code>8bit*3</code>，可表示<code>256*256*256</code>种颜色，完全满足肉眼需求，每个bit还能富余1位，so最高位都赋值为0。<br>&emsp;&emsp;对于rgba模型多出的a值表示的是透明度，取值范围0～1，表示这个像素点透明的程度。<br>&emsp;&emsp;这些像素的颜色需要通过显示器来展示，显示器上安有能发出三原色光线的元器件，也能改变亮度，配合上图片每个位图的各项信息，最终能呈现出物理世界的图片。这就有了另一个问题，同一个图片，在某些场景下，为何会出现模糊的情况？<br>&emsp;&emsp;默认一个位图对应一个物理像素，当一个位图对应多个物理像素时，就会通过就近取色算法（如像素颜色差值）根据附近颜色信息更新一个。如x,y,z横向三个像素点，y色值=(x色值+z色值)/2，导致图片看起来比较模糊。相反，如果一个物理像素对应多个位图，也会造成图片减少锐度、有色差。<br><em>Tips</em>：设备物理像素为设备绝对像素，浏览器中css像素（即设备独立像素）为相对像素，pc端浏览器中独立像素和物理像素1:1对应，多倍屏浏览器中一个独立像素对应多个物理像素。移动端切图时候需要额外处理下，设计图的像素值是相对于电脑屏幕1倍图，但对于多倍屏来说，最终像素值要用ui图的值除以设备像素比。border 1px问题可以通过scale解决。</p>
-<p><strong>压缩</strong><br>&emsp;&emsp;压缩分位有损压缩和无损压缩。精度要求高的采用无损压缩，像图片、音视频都采用有损压缩，不影响表达的同时大大减少数据量。比较简单的压缩方法aaaaabbbbccc =&gt; 5a4b3c，大大节省了存储空间。</p>
-<p>&emsp;&emsp;我们编程的代码通过层层编译解释，最终也成为01表示的机器码。理解了这些基础知识，就很容易把具体事物抽象出来再用编码表示，对我们来说，计算机也就不再是个黑盒的存在了。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://kissy-xxy.github.io/2021/02/04/basicInfo/" data-id="cklhkyuc300011dn4aerlf8ad" data-title="浅谈现实世界信息数字化" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" rel="tag">计算机基础</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
-
-
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/01/31/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2021-01-31T22:29:37.000Z" itemprop="datePublished">2021-01-31</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/01/31/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        hexo init
-        
-          <p class="article-more-link">
-            <a href="/2021/01/31/hello-world/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://kissy-xxy.github.io/2021/01/31/hello-world/" data-id="cklhkyuc700031dn48i193l42" data-title="Hello World" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
 </section>
